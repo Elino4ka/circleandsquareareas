@@ -1,29 +1,29 @@
-package com.example.circleandsquareareas;
+package com.example.circleandsquareareas
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 
-import android.os.Bundle;
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val X = 4
+        val circleArea = Math.PI * X * X
+        Log.d("DZ", "Площадь круга =$circleArea")
+        val squareArea = (X * X).toDouble()
+        Log.d("DZ", "Площадь квадрата =$squareArea")
 
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        int X = 4;
-        double circleArea = Math.PI * X * X;
-        System.out.println("Площадь круга = " + circleArea);
-
-        double squareArea = X * X;
-        System.out.println("Площадь квадрата = " + squareArea);
-
-        if (circleArea > squareArea) {
-            System.out.println("Площадь круга больше площади квадрата");
-        } else if (circleArea < squareArea) {
-            System.out.println("Площадь круга меньше площади квадрата");
-        } else
-            System.out.println("Площадь круга равна площади квадрата");
+        when {
+            (circleArea > squareArea) -> {
+                Log.d("DZ", "Площадь круга больше площади квадрата")
+            }
+            (circleArea < squareArea) -> {
+                Log.d("DZ", "Площадь круга меньше площади квадрата")
+            }
+            else -> {
+                Log.d("DZ", "Площадь круга равна площади квадрата")
+            }
+        }
     }
-
 }
