@@ -8,6 +8,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val X = 4
         val circleArea = Math.PI * X * X
         Log.d("DZ", "Площадь круга =$circleArea")
